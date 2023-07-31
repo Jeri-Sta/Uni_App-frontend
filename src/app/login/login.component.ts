@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { HttpClient, HttpErrorResponse, HttpHeaders, HttpResponse } from '@angular/common/http';
-import { AuthService } from '../auth.service';
+import { Component } from '@angular/core';
+import { AuthService } from './auth.service';
+import { User } from '../models/user';
+
 
 @Component({
   selector: 'app-login',
@@ -8,26 +9,17 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  public email = '';
-  public password = '';
+  public user: User = new User();
   public isLoading: boolean = false;
 
   constructor(private authService: AuthService) { }
   
   onLogin() {
     this.isLoading = true;
-    this.authService.login(this.email, this.password)
-      .subscribe(
-        (response: any) => {
-          // Lógica para tratamento da resposta do servidor após o login
-          console.log('Login bem-sucedido:', response);
-        },
-        (error: any) => {
-          // Lógica para tratamento de erro durante o login
-          console.error('Erro durante o login:', error);
-          this.isLoading = false;
-        }
-      );
+    var params = { loading: this.isLoading, token: '', user: this.user}
+
+    const response = this.authService.login(params);
+
   }
 
   
