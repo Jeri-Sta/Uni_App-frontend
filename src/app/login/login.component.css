@@ -1,0 +1,33 @@
+.fields {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.form__field{
+    width: 14rem;
+}
+
+.p-float-label {
+    margin-bottom: 1.5rem;
+}
+
+.login__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    padding: 1rem;
+    height: 15rem;
+    width: 15rem;
+}
+
+.logo__image{
+    border-radius: 30%;
+}

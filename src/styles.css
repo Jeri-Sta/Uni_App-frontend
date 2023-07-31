@@ -1,1 +1,47 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+    --primary-color: #F27405;
+    --secondary-color: #F25C05;
+    --light-color: #F29F05;
+    --dark-color: #000000;
+    --background: #F2F2F2;
+
+    background-color: var(--background);
+}
+
+:host ::ng-deep .p-button {
+    margin-right: .5rem;
+}
+
+:host ::ng-deep .p-buttonset {
+    .p-button {
+        margin-right: 0;
+    }
+}
+
+:host ::ng-deep .sizes {
+    .button {
+        margin-bottom: .5rem;
+        display: block;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .p-button {
+        margin-bottom: .5rem;
+
+        &:not(.p-button-icon-only) {
+            display: flex;
+            width: 100%;
+        }
+    }
+
+    .p-buttonset {
+        .p-button {
+            margin-bottom: 0;
+        }
+    }
+}

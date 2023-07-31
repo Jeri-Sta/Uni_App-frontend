@@ -1,9 +1,16 @@
-<div>
-    <label for="username">Usuário:</label>
-    <input type="text" id="username" [(ngModel)]="email">
-  
-    <label for="password">Senha:</label>
-    <input type="password" id="password" [(ngModel)]="password">
-  
-    <button (click)="onLogin()">Entrar</button>
-  </div>
+<div class="logo">
+  <img class="logo__image" src="../../assets/img/uni-logo3.jpg">
+</div>
+<div class="fields">
+    <span class="p-float-label">
+      <input id="float-input" class="form__field" type="text" pInputText [(ngModel)]="email"> 
+      <label for="username">Email</label>
+    </span>
+    <span class="p-float-label">
+      <p-password class="form__field" [feedback]="false" [(ngModel)]="password" [toggleMask]="true"></p-password>
+      <label for="password">Senha</label>
+    </span>
+</div>
+<div class="login__button">
+  <button pButton pRipple type="button" label="Login" (click)="onLogin()" class="p-button-rounded" [loading]="isLoading"></button>
+</div>

@@ -8,12 +8,14 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  email = '';
-  password = '';
+  public email = '';
+  public password = '';
+  public isLoading: boolean = false;
 
   constructor(private authService: AuthService) { }
   
   onLogin() {
+    this.isLoading = true;
     this.authService.login(this.email, this.password)
       .subscribe(
         (response: any) => {
@@ -23,6 +25,7 @@ export class LoginComponent {
         (error: any) => {
           // Lógica para tratamento de erro durante o login
           console.error('Erro durante o login:', error);
+          this.isLoading = false;
         }
       );
   }
