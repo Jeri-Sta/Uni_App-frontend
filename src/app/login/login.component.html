@@ -3,11 +3,11 @@
 </div>
 <div class="fields">
     <span class="p-float-label">
-      <input id="float-input" class="form__field" type="text" pInputText [(ngModel)]="email"> 
+      <input id="float-input" class="form__field" type="text" pInputText [(ngModel)]="user.email"> 
       <label for="username">Email</label>
     </span>
     <span class="p-float-label">
-      <p-password class="form__field" [feedback]="false" [(ngModel)]="password" [toggleMask]="true"></p-password>
+      <p-password class="form__field" [feedback]="false" [(ngModel)]="user.password" [toggleMask]="true"></p-password>
       <label for="password">Senha</label>
     </span>
 </div>

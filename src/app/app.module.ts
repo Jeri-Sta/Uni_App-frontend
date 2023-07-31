@@ -12,11 +12,14 @@ import {MenuItem} from 'primeng/api';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {InputTextModule} from 'primeng/inputtext';
 import {PasswordModule} from 'primeng/password';
+import { HomeComponent } from './home/home.component';
+import {MenubarModule} from 'primeng/menubar';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,9 +30,10 @@ import {PasswordModule} from 'primeng/password';
     AccordionModule,
     BrowserAnimationsModule,
     InputTextModule,
-    PasswordModule
+    PasswordModule,
+    MenubarModule
   ],
-  providers: [],
+  providers: [LoginComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
