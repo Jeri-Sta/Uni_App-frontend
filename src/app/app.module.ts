@@ -14,6 +14,7 @@ import {InputTextModule} from 'primeng/inputtext';
 import {PasswordModule} from 'primeng/password';
 import { HomeComponent } from './home/home.component';
 import {MenubarModule} from 'primeng/menubar';
+import { AuthGuard } from './guard/auth.guard';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,7 @@ import {MenubarModule} from 'primeng/menubar';
     PasswordModule,
     MenubarModule
   ],
-  providers: [LoginComponent],
+  providers: [LoginComponent, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
